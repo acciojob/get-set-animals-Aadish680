@@ -1,19 +1,20 @@
 //complete this code
-
+// Parent class: Animal
 class Animal {
     constructor(species) {
-        this.species = species;
+        this._species = species;
     }
 
     get species() {
-        return `${this.species}`;
+        return this._species;
     }
 
     makeSound() {
-        console.log(`The ${this.species} makes a sound`);
+        console.log(`The ${this._species} makes a sound`);
     }
 }
 
+// Child class: Cat
 class Cat extends Animal {
     constructor(species) {
         super(species);
@@ -24,6 +25,7 @@ class Cat extends Animal {
     }
 }
 
+// Child class: Dog
 class Dog extends Animal {
     constructor(species) {
         super(species);
@@ -33,6 +35,16 @@ class Dog extends Animal {
         console.log("woof");
     }
 }
+
+// Example usage:
+const myCat = new Cat("Siamese");
+myCat.makeSound(); // Output: The Siamese makes a sound
+myCat.purr();      // Output: purr
+
+const myDog = new Dog("Golden Retriever");
+myDog.makeSound(); // Output: The Golden Retriever makes a sound
+myDog.bark();      // Output: woof
+
 
 
 // Do not change the code below this line
